@@ -26,9 +26,12 @@ public class ChangeCalculator {
 		int dimes = aAsint*10;
 		int quarters = sAsint*25;
 		int total = nickels+dimes+quarters;
+		int dollars = total/100;
+		int cents = total%100;
+		String everything = dollars+"."+cents;
+		
 		// Tell the user how much money they have in dollars and cents format (e.g. $6.75)
-		int conversion = total / 100;
-		JOptionPane.showMessageDialog(null, "$"+conversion);
+		JOptionPane.showMessageDialog(null, "$"+ everything);
 		
 	}
 }
