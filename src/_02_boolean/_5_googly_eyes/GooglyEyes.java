@@ -37,8 +37,8 @@ import processing.core.PImage;
  *    to the boundary. Put this code before you draw the pupils.
  */
 public class GooglyEyes extends PApplet {
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
+    static final int WIDTH = 352;
+    static final int HEIGHT = 235;
     
     PImage face;
     
@@ -49,12 +49,39 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
-
+    	face = loadImage("owl-staring-eyeballs.jpeg");
+    	face.resize(WIDTH, HEIGHT);
     }
 
     @Override
     public void draw() {
-
+    	background(face);
+    	fill(235, 235, 235);
+    	ellipse(108, 98, 60, 60);
+    	ellipse(230, 92, 60, 60);
+    	fill(0, 0, 0);
+    	int leftx = mouseX;
+    	int lefty = mouseY;
+    	if(leftx < 78) {
+    		leftx = 78;
+    	}
+    	if (leftx > 138) {
+    		leftx = 138;
+    	}
+    	if(lefty < 80) {
+    		lefty = 80;
+    	}
+    	if (lefty > 117) {
+    		lefty = 117;
+    	}
+    	int rightx = leftx+122;
+    	int righty = lefty-4;
+    	ellipse(leftx, lefty, 30, 30);
+    	
+    	ellipse(rightx, righty, 30, 30);
+    	
+    	
+    	
     }
 
     static public void main(String[] args) {
