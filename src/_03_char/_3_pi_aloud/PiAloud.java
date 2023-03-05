@@ -2,18 +2,37 @@ package _03_char._3_pi_aloud;
 
 import java.util.Scanner;
 
+import game_tools.Sound;
+
 public class PiAloud {
     /***********  SOUND ***************
      * Some computers are unable to play sounds.
      * If you cannot play sound on this computer, set canPlaySounds to false.
      * If you are not sure, ask your teacher
      * *****************/
-    boolean canPlaySounds = true;
-
+  
 
     // 1. Make a main method and make sure your program can run
+public static void main(String[] args) {
+	  boolean canPlaySounds = false;
 
+		String pi = "3.14159265358979323846";
+		//for(int i = 0; i < 3;  i++) {
+		//System.out.println(pi.charAt(i));
+			for(int i = 0; i <= pi.length(); i++) {
+				System.out.println(pi.charAt(i));
+				if (canPlaySounds) {
+				
+		Sound.speak(pi);
+		}
+
+	
+}
+}
+
+//}
     // 2. Make a String variable to hold 20 digits of Pi. You could use http://www.piday.org/million/ to get this.
+
 
     // 3. Print out 3 digits of Pi. The first value is "pi.charAt(0)", the second is "pi.charAt(1)"
     // Check the console shows 3.1
@@ -35,18 +54,18 @@ public class PiAloud {
 
     /********************  Use these methods. DON'T CHANGE THE CODE BELOW  ******************/
 
-    private static void pause(int seconds) {
-        try {
-            Thread.sleep(1000 * seconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+private static void pause(int seconds) {
+    try {
+        Thread.sleep(1000 * seconds);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
     }
+}
 
-    static char getInputFromUser() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next().toCharArray()[0];
-    }
+static char getInputFromUser() {
+    Scanner scanner = new Scanner(System.in);
+    return scanner.next().toCharArray()[0];
+}
 
 }
 
